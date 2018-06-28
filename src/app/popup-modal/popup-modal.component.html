@@ -2,7 +2,9 @@
   <h4 class="modal-title">{{header}}</h4>
 </div>
 <div class="modal-body">
-  <p>{{postData | json}}</p>
+  <code>
+      <pre>{{postData | json}}</pre>
+  </code>
 </div>
 <div class="modal-footer">
   <button type="button" class="btn btn-outline-dark" (click)="activeModal.close('Close click')">Close</button>

@@ -32,7 +32,7 @@ export class PostsComponent implements OnInit {
   showPost(post): void {
     // open modal popup to show json post data
     const modalRef = this.modalService.open(PopupModalComponent);
-    modalRef.componentInstance.header = 'JSON data of post';
+    modalRef.componentInstance.header = post.title + ': JSON data';
     modalRef.componentInstance.postData = post;
   }
 
