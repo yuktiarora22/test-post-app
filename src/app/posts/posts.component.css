@@ -1,0 +1,15 @@
+.pageHeading {
+  border-bottom: 2px solid #c8c8c8;
+  padding-bottom: 6px;
+}
+
+.loaderText {
+  width: 260px;
+  margin: 0 auto;
+  text-align: center;
+  font-weight: 700;
+}
+
+.post-row {
+  cursor: pointer;
+}

@@ -1,0 +1,38 @@
+<div class="container">
+  <h2 class="pageHeading">Getting posts every 10 seconds</h2>
+
+  <div *ngIf="!loadingPosts">
+    <div class="row">
+      <div class="col-md-8">
+        <h5>Getting more posts in {{countDown | async}} seconds</h5>
+      </div>
+      <div class="col-md-4 form-group">
+        <input class="form-control" [(ngModel)]="searchText" placeholder="Search posts by title">
+      </div>
+    </div>
+
+    <table class="table table-bordered table-hover table-sm">
+      <thead class="thead-light">
+        <tr>
+          <th>Title</th>
+          <th>URL</th>
+          <th>Created at</th>
+          <th>Author</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr class="post-row" *ngFor="let post of posts | filter : searchText : 'title'" (click)="showPost(post)">
+          <td>{{post.title}}</td>
+          <td>{{post.url}}</td>
+          <td>{{post.created_at | date:'MMMM d, y hh:mm a':'+0000'}}</td>
+          <td>{{post.author}}</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div *ngIf="loadingPosts">
+    <h3 class="loaderText">Loading...</h3>
+  </div>
+
+</div>
